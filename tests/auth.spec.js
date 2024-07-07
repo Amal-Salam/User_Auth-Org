@@ -44,7 +44,7 @@ describe('Authentication and Organization Endpoints', () => {
 
   test('It Should Log the user in successfully', async () => {
     const res = await request(app).post('/auth/login').send({
-      email: 'john.doe@example.com',
+      email: 'damon.salvatore@example.com',
       password: 'password123',
     });
 
@@ -74,11 +74,11 @@ describe('Authentication and Organization Endpoints', () => {
 
   test('It Should Fail if there’s Duplicate Email or UserID', async () => {
     const res = await request(app).post('/auth/register').send({
-      firstName: 'Jane',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      password: 'password123',
-      phone: '0987654321',
+      firstName: 'Klaus',
+      lastName: 'Mikealson',
+      email: 'klaus.Mikealson@example.com',
+      password: 'original123',
+      phone: '1234567890',
     });
 
     expect(res.statusCode).toEqual(400);
@@ -107,49 +107,3 @@ describe('Authentication and Organization Endpoints', () => {
 });
 
 
-// const { checkUserAccess } = require('../middlewares/AuthMiddleware');
-// const { PrismaClient } = require('@prisma/client');
-
-// const prisma = new PrismaClient();
-
-// describe('Organisation Access', () => {
-//   it('should restrict access to unauthorized users', async () => {
-//     // Create a mock user and organization for testing
-//     const user = await prisma.user.create({
-//       data: {
-//         userId: 1,
-//         firstName: 'John',
-//         lastName: 'Doe',
-//         email: 'john.doe@example.com',
-//         password:"password"
-//       },
-//     });
-
-//     const organization = await prisma.organization.create({
-//       data: {
-//         name: "John's Organisation",
-//        description:"John's new org"
-//       },
-//     });
-//     const organizationOnUsers = await prisma.organisationsOnUsers.create({
-//       data: {
-//         userId: "",
-//         organisationId: "",
-//       },
-//     });
-     
-//     // Simulate a request with unauthorized user accessing organization data
-//     const req = { user: { userId: 2 } }; // Assuming user ID 2 is not authorized
-//     const res = {};
-
-//     const next = jest.fn();
-
-//     checkUserAccess(req, res, next);
-
-//     expect(next).toHaveBeenCalledWith(
-//       expect.objectContaining({ statusCode: 403 })
-//     );
-//   });
-
-//   // Add more tests for different scenarios of organization access
-// });

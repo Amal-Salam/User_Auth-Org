@@ -1,6 +1,6 @@
 # User_Auth-Org
 
-READ CAREFULLY!!!
+READ CAREFULLY!!
 Acceptance Criteria
 Connect your application to a Postgres database server. (optional: you can choose to use any ORM of your choice if you want or not).
 Create a User model using the properties below

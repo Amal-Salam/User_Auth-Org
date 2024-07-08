@@ -7,7 +7,7 @@ const getAllUserOrganisation = async (req, res) => {
       where: {
         users: {
           some: {
-            userId: req?.user?.userId,
+            userId: req.user
           },
         },
       },

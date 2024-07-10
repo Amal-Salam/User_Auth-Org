@@ -67,7 +67,7 @@ const registerUserController = async (req, res) => {
         lastName:user.lastName,
         email:user.email,
         phone:user.phone
-        
+        }  
       },
     });
   } catch (error) {
@@ -120,7 +120,7 @@ const loginUserController = async (req, res) => {
         lastName:user.lastName,
         email:user.email,
         phone:user.phone
-        
+        }
       },
     });
   } catch (error) {

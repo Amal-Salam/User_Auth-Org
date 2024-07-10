@@ -5,15 +5,15 @@ const auth = (req, res, next) => {
   const authHeader = req.header('Authorization')
 
   if (!authHeader) {
-    // console.log(authHeader);
+    
     return res.status(401).json({
       field: 'Unauthorized',
       message: 'No token, authorization denied',
       
     });
   }
-  
- const token = authHeader.replace('Bearer', '');
+  // console.log(authHeader);
+const token = authHeader.split(' ')[1] || ' ';
 //  console.log(token);
   try {
     const decoded = jwt.verify(token,process.env.JWT_SECRET);

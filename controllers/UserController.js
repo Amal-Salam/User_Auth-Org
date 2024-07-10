@@ -61,7 +61,12 @@ const registerUserController = async (req, res) => {
       message: 'Registration successful',
       data: {
         accessToken: token,
-        user
+        user:{
+          userId:user.userId,
+        firstName:user.firstName,
+        lastName:user.lastName,
+        email:user.email,
+        phone:user.phone
         
       },
     });
@@ -71,7 +76,7 @@ const registerUserController = async (req, res) => {
       status: 'Bad request',
       message: 'Registration unsuccessful',
       statusCode: 400,
-      error:error
+      // error:error
     });
   }
 };
@@ -109,7 +114,12 @@ const loginUserController = async (req, res) => {
       message: 'Login successful',
       data: {
         accessToken: token,
-        user
+        user:{
+          userId:user.userId,
+        firstName:user.firstName,
+        lastName:user.lastName,
+        email:user.email,
+        phone:user.phone
         
       },
     });

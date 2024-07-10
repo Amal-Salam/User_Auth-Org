@@ -6,7 +6,7 @@ const auth = (req, res, next) => {
 
   if (!authHeader) {
     // console.log(authHeader);
-    return res.status(400).json({
+    return res.status(401).json({
       field: 'Unauthorized',
       message: 'No token, authorization denied',
       
